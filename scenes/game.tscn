@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=4 uid="uid://dkwc17f5n47rl"]
+[gd_scene load_steps=22 format=4 uid="uid://dkwc17f5n47rl"]
 
 [ext_resource type="PackedScene" uid="uid://bn0k5uw2m5vmq" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://be503v5088atp" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://b11nefljvc21w" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://s2ksqh1wkex" path="res://scenes/enemy.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://jxs1qffha3n4" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://bk2ej7sebxtuu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://ii3efqhiblnv" path="res://scenes/killzone.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
@@ -466,6 +467,48 @@ autoplay = "move"
 [node name="Enemy" parent="World/Main Area" instance=ExtResource("3_p57ef")]
 position = Vector2(520, 128)
 
+[node name="Coins" type="Node" parent="World/Main Area"]
+
+[node name="coin" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(88, 55)
+
+[node name="coin7" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(183, 264)
+
+[node name="coin10" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(8, 246)
+
+[node name="coin8" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(501, 261)
+
+[node name="coin9" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(618, 245)
+
+[node name="coin2" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(138, 74)
+
+[node name="coin3" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(330, 89)
+
+[node name="coin5" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(512, 100)
+
+[node name="coin6" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(633, 55)
+
+[node name="coin4" parent="World/Main Area/Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(257, 89)
+
+[node name="Label" type="Label" parent="World/Main Area"]
+offset_left = 444.0
+offset_top = 98.0
+offset_right = 584.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("4_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Press Space to Jump
+and avoid the slime"
+
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(25, 52)
 
@@ -483,35 +526,3 @@ position = Vector2(213, 168)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(-37, 202)
 shape = SubResource("WorldBoundaryShape2D_iywne")
-
-[node name="Coins" type="Node" parent="."]
-
-[node name="coin" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(88, 55)
-
-[node name="coin7" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(183, 264)
-
-[node name="coin10" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(8, 246)
-
-[node name="coin8" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(501, 261)
-
-[node name="coin9" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(618, 245)
-
-[node name="coin2" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(138, 74)
-
-[node name="coin3" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(330, 89)
-
-[node name="coin5" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(512, 100)
-
-[node name="coin6" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(633, 55)
-
-[node name="coin4" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(257, 89)
