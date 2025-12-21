@@ -2,14 +2,12 @@ extends Area2D
 
 @onready var timer = $Timer
 
-func _ready():
-	timer.process_mode = Node.PROCESS_MODE_ALWAYS
-
 func _on_body_entered(_body: Node2D) -> void:
 	print("Player entered kill zone!")
-	get_tree().paused = true
+	Engine.time_scale = 0.5
+	_body.get_node("CollisionShape2D").queue_free()
 	timer.start()
 
 func _on_timer_timeout() -> void:
-	get_tree().paused = false
+	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
