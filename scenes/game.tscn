@@ -431,9 +431,9 @@ script = ExtResource("1_gee14")
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 z_index = 3
 offset_left = -16.0
-offset_top = 216.0
-offset_right = 144.0
-offset_bottom = 240.0
+offset_top = 192.0
+offset_right = 184.0
+offset_bottom = 216.0
 theme_override_fonts/font = ExtResource("4_u5sy4")
 theme_override_font_sizes/font_size = 8
 text = "Congratuldations.
