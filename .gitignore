@@ -4,4 +4,7 @@
 *.import
 *.uid
 .vscode/
+
+# Godot build outputs
 *.exe
+Build/
